@@ -1,0 +1,12 @@
+Array
+(
+    [original] => Array
+        (
+            [name] => IMAG3059.jpg
+            [type] => application/octet-stream
+            [tmp_name] => /tmp/phpI916Q8
+            [error] => 0
+            [size] => 1509639
+        )
+
+)

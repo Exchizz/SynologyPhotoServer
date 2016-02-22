@@ -1,0 +1,187 @@
+{
+        "SYNO.PhotoStation.Auth": {
+                "path": "auth.php",
+                "minVersion": 1,
+                "maxVersion": 1,
+                "methods": {
+                        "1": ["login", "logout", "checkauth"]
+                }
+        },
+        "SYNO.PhotoStation.Info": {
+                "path": "info.php",
+                "minVersion": 1,
+                "maxVersion": 1,
+                "methods": {
+                        "1": ["getinfo"]
+                }
+        },
+        "SYNO.PhotoStation.Album": {
+                "path": "album.php",
+                "minVersion": 1,
+                "maxVersion": 1,
+                "methods": {
+                        "1": ["list", "getinfo", "create", "edit", "delete", "arrangeitem", "move", "cleararrangeitem", "cancel"]
+                }
+        },
+        "SYNO.PhotoStation.Permission": {
+                "path": "permission.php",
+                "minVersion": 1,
+                "maxVersion": 1,
+                "methods": {
+                        "1": ["getalbum", "editalbum", "editgroup", "list_public_share", "edit_public_share"]
+                }
+        },
+	"SYNO.PhotoStation.Photo": {
+		"path": "photo.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "listexif", "listfeatureditem", "listgpsgroup", "listgpsgroupeditem", "getinfo", "getexif", "edit", "delete", "copy", "cancel"]
+		}
+	},
+	"SYNO.PhotoStation.Thumb": {
+		"path": "thumb.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["get", "get_dsm_thumb"]
+		}
+	},
+        "SYNO.PhotoStation.Cover": {
+		"path": "cover.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["set"]
+		}
+	},
+        "SYNO.PhotoStation.SmartAlbum": {
+		"path": "smart_album.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "getinfo", "create", "edit", "delete"]
+		}
+	},
+	"SYNO.PhotoStation.File": {
+		"path": "file.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["uploadphoto", "uploadvideo"]
+		}
+	},
+	"SYNO.PhotoStation.Download": {
+		"path": "download.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["getphoto", "getvideo", "getitem"]
+		}
+	},
+        "SYNO.PhotoStation.Category": {
+                "path": "category.php",
+                "minVersion": 1,
+                "maxVersion": 1,
+                "methods": {
+                        "1": ["list", "getinfo", "create", "edit", "delete", "arrangecategory", "listitem", "additem", "removeitem", "arrangeitem"]
+                }
+        },
+	"SYNO.PhotoStation.About": {
+		"path": "about.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["get", "set", "set_visibility"]
+		}
+	},
+	"SYNO.PhotoStation.Tag": {
+		"path": "tag.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "getinfo", "create", "edit", "delete", "searchplace", "delete_unconfirmed_tag"]
+		}
+	},
+	"SYNO.PhotoStation.PhotoTag": {
+		"path": "photo_tag.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "people_tag", "geo_tag", "desc_tag", "delete", "people_tag_confirm"]
+		}
+	},
+	"SYNO.PhotoStation.Comment": {
+		"path": "comment.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "create", "delete"]
+		}
+	},
+	"SYNO.PhotoStation.Timeline": {
+		"path": "timeline.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["getindex"]
+		}
+	},
+	"SYNO.PhotoStation.Group": {
+		"path": "group.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "get", "get_dsm_group", "getmember", "create", "edit", "editmember", "delete"]
+		}
+	},
+        "SYNO.PhotoStation.Rotate": {
+                "path": "rotate.php",
+                "minVersion": 1,
+                "maxVersion": 1,
+                "methods": {
+                        "1": ["set"]
+                }
+        },
+	"SYNO.PhotoStation.SlideshowMusic": {
+		"path": "slideshow_music.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "get", "add", "edit", "delete"]
+		}
+	},
+	"SYNO.PhotoStation.DsmShare": {
+		"path": "dsm_share.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "copy", "copymusic"]
+		}
+	},
+	"SYNO.PhotoStation.SharedAlbum": {
+		"path": "shared_album.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "getinfo", "getinfo_public", "create", "edit", "delete", "add_items", "remove_items", "edit_public_share", "get_single_item", "set_single_item"]
+		}
+	},
+	"SYNO.PhotoStation.PhotoLog": {
+		"path": "log.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["list", "clear", "export"]
+		}
+	},
+	"SYNO.PhotoStation.Path": {
+		"path": "path.php",
+		"minVersion": 1,
+		"maxVersion": 1,
+		"methods": {
+			"1": ["getpath", "checkpath"]
+		}
+	}
+}
+
