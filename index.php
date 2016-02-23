@@ -30,8 +30,23 @@ if(isGet() && strpos(getCurrentUri(), "photo/webapi/PhotoStation.api") !== false
 	echo 'offset=0&limit=120&api=SYNO.PhotoStation.Category&method=list&version=1';
 	error_log("Category: ".print_r($_POST,1));
 
-} else if(isPost() && strpos(getCurrentUri(), "photo/webapi/album.php") !== false){
-	echo '{"success":true,"data":{"total":0,"offset":0,"items":[]}}';
+} else if(strpos(getCurrentUri(), "photo/webapi/album.php") !== false){
+	$items = array();
+
+
+	$info = array("sharepath" => "Mobil", "name" => "Mobil", "title" => "Mobil", "description" => "", "hits" =>"15", "type" => "private", "conversation" => true, "allow_comment" => false);;
+	$album_sorting = array("sort_by" => "default", "sort_direction" => "asc", "has_preference_sort" => "true");
+	$preview = array("resolutionx" => 0, "resolutiony" => 0);
+	$large = array("resolutionx" => 100, "resolutiony" => 100, "mtime" => 0);
+	$small = array("resolutionx" => 100, "resolutiony" => 100, "mtime" => 0);
+	$additional = array("album_sorting" => $album_sorting, "album_permission" => array("browse" => "true", "upload" => "true", "manage" => "true"),"thumb_size" => array("preview" => $preview, "small" => $small, "large" => $large, "sig" => "2f766f6c756d65312f70686f746f2f4d6f62696c2f564944454f303334312e6d7034"));
+	$album = array("info" => $info, "additional" => $additional, "id" => "album_4d6f62696c", "type" => "album", "thumbnail_status" => "small,large" );
+	$items[0] = $album;
+	$data = array("total" => count($items), "offset" => count($items), "items" => $items);
+	$response = array("success" => true, "data" => $data);
+
+	echo json_encode($response);
+//	echo '{"success":true,"data":{"total":0,"offset":0,"items":[]}}';
 	error_log("Album: ". print_r($_POST,1));
 
 } else if(isPost() && strpos(getCurrentUri(), "photo/webapi/file.php") !== false){
@@ -57,8 +72,8 @@ if(isGet() && strpos(getCurrentUri(), "photo/webapi/PhotoStation.api") !== false
 		echo '{"success":false}';
 	}
 } else {
-	error_log("unknown request: ".getCurrentUri() );
-	echo "Requested uri: ";
+	error_log("unknown request: ".$_SERVER['REQUEST_URI'] );
+	error_log(print_r($_POST,1));
 }
 
 ?>
