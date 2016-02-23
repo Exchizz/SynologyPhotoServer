@@ -46,26 +46,19 @@ if(isGet() && strpos(getCurrentUri(), "photo/webapi/PhotoStation.api") !== false
 	$response = array("success" => true, "data" => $data);
 
 	echo json_encode($response);
-//	echo '{"success":true,"data":{"total":0,"offset":0,"items":[]}}';
 	error_log("Album: ". print_r($_POST,1));
 
 } else if(isPost() && strpos(getCurrentUri(), "photo/webapi/file.php") !== false){
 	error_log("File: ". print_r($_POST,1));
 	error_log("File: ". print_r($_FILES,1));
 
-	file_put_contents("upload_files.txt", print_r($_FILES,1));
+        $tmp_name = $_FILES["original"]["tmp_name"];
+        $name = $_FILES["original"]["name"];
+        move_uploaded_file($tmp_name, "images/$name");
 
+	//Error handling not currently implemented
 	$allGood = true;
-//	foreach ($_FILES["original"]["error"] as $key => $error) {
-//		if ($error == UPLOAD_ERR_OK) {
-		        $tmp_name = $_FILES["original"]["tmp_name"];
-		        $name = $_FILES["original"]["name"];
-		        move_uploaded_file($tmp_name, "images/$name");
-//		} else {
-//			$allGood = false;
-//			error_log("file upload failed: ". $error);
-//		}
-//	}
+
 	if($allGood){
 		echo '{"success":true}';
 	} else {
